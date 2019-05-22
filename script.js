@@ -40,5 +40,32 @@ let quotes = [
     quote:
       "I am so clever that sometimes I don't understand a single word of what I am saying.",
     author: "Oscar Wilde"
+  },
+  {
+    quote:
+      "I believe that everything happens for a reason. People change so that you can learn to let go, things go wrong so that you appreciate them when they're right, you believe lies so you eventually learn to trust no one but yourself, and sometimes good things fall apart so better things can fall together.",
+    author: "Marilyn Monroe"
+  },
+  {
+    quote: "Learning never exhausts the mind.",
+    author: "Jane Austen"
+  },
+  {
+    quote: "If you cannot do great things, do small things in a great way.",
+    author: "Napoleon Hill"
+  },
+  {
+    quote:
+      "Permanence, perseverance and persistence in spite of all obstacles, discouragements, and impossibilities: It is this, that in all things distinguishes the strong soul from the weak.",
+    author: "Thomas Carlyle"
   }
 ];
+
+const $btn = $("#btn");
+
+$btn.click(function() {
+  let number = Math.floor(Math.random() * quotes.length);
+
+  $("#qoute").html("<span>" + quotes[number].quote + "</span>");
+  $("#author").html("<span>--</span>" + quotes[number].author);
+});
