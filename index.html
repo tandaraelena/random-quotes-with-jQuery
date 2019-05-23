@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>JS</title>
+    <title>JavaScript</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="main.css" />
   </head>
-  <body>
+  <body id="body">
     <div class="container">
       <div class="quote-text">
         <h1 id="qoute">
@@ -16,8 +16,47 @@
         </h1>
         <p id="author">by Elen@</p>
       </div>
-      <button id="btn">Click here</button>
+      <button id="btn">Click here to change the quote</button>
+      <button id="hex">Click here to change the background-color</button>
     </div>
     <script src="script.js"></script>
+    <script>
+      // variables
+
+      const hex = document.getElementById("hex");
+      const bodycolor = document.getElementById("body");
+
+      let color = "#";
+      const colors = [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ];
+
+      hex.addEventListener("click", getColor);
+
+      function getColor() {
+        color = "#";
+        for (let i = 0; i < 6; i++) {
+          let number = Math.floor(Math.random() * colors.length);
+          color += colors[number];
+          console.log(color);
+        }
+        bodycolor.style.backgroundColor = color;
+      }
+    </script>
   </body>
 </html>
